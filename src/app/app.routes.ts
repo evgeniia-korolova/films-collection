@@ -15,6 +15,10 @@ export const routes: Routes = [
         path: '',
         loadComponent: () => import('./features/film-catalog/components/film-list/film-list'),
       },
+      {
+        path: 'film/:id', // Детали фильма
+        loadComponent: () => import('./pages/film-details-page/film-details-page')          
+      }
     ],
   },
   {

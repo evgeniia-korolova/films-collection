@@ -1,0 +1,25 @@
+@let movie = film();
+<article class="details-card" aria-labelledby="film-title">
+  @if (movie) {
+    <header class="details-header">
+        <a routerLink="/" class="back-link">← Back to Catalog</a>
+      <h1 id="film-title">{{ movie.title }}</h1>
+    </header>
+
+    <div class="details-content">
+      <img [src]="movie.posterUrl" [alt]="movie.title" class="main-poster" />
+      <div class="details-info">
+        <p><strong>Year:</strong> {{ movie.year }}</p>
+        <p><strong>Genre:</strong> {{ movie.genre }}</p>
+        <p><strong>Rating:</strong> ⭐ {{ movie.rating }}</p>
+        <p><strong>Duration:</strong> {{ movie.duration }} min</p>
+        <p class="description">{{ movie.description }}</p>
+      </div>
+    </div>
+  } @else {
+    <div class="not-found">
+      <p>Film with ID {{ id() }} not found.</p>
+      <a class="back-link" routerLink="/">Return to catalog</a>
+    </div>
+  }
+</article>

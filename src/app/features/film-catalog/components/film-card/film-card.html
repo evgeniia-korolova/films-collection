@@ -1,14 +1,20 @@
-<div class="card">
-    <img [src]="film().posterUrl" [alt]="film().title" class="poster">
-    <div class="info">
-      <h3>{{ film().title | uppercase }}</h3>
-      <p>{{ film().year }} • {{ film().genre }}</p>
-      <div class="actions">
-          <div class="rating">⭐ {{ film().rating }}</div>
-          
-          <button (click)="onFavoriteToggle($event)">
-            {{ film().isFavorite ? '❤️ In Favorites' : '🤍 Add to Favorites' }}
-          </button>
-      </div>
+<article
+  class="card"
+  (click)="goToDetails()"
+  (keydown.enter)="goToDetails()"
+  tabindex="0"
+  [attr.aria-label]="'View details for ' + film().title"
+>
+  <img [src]="film().posterUrl" [alt]="film().title" class="poster" />
+  <div class="info">
+    <h3>{{ film().title | uppercase }}</h3>
+    <p>{{ film().year }} • {{ film().genre }}</p>
+    <div class="actions">
+      <div class="rating">⭐ {{ film().rating }}</div>
+
+      <button (click)="onFavoriteToggle($event)">
+        {{ film().isFavorite ? '❤️ In Favorites' : '🤍 Add to Favorites' }}
+      </button>
     </div>
   </div>
+</article>
