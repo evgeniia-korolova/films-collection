@@ -1,0 +1,9 @@
+<div class="film-grid">
+    @for (movie of filmService.allFilms(); track movie.id) {
+      <app-film-card 
+        [film]="movie"         
+      />
+    } @empty {
+      <p>No films found...</p>
+    }
+  </div>
