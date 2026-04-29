@@ -2,7 +2,7 @@
 <article class="details-card" aria-labelledby="film-title" appEscapeNavDirective>
   @if (movie) {
     <header class="details-header">
-        <a routerLink="/" class="back-link">← Back to Catalog</a>
+      <a routerLink="/" class="back-link">← Back to Catalog</a>
       <h1 id="film-title">{{ movie.title }}</h1>
     </header>
 
@@ -12,8 +12,12 @@
         <p><strong>Year:</strong> {{ movie.year }}</p>
         <p><strong>Genre:</strong> {{ movie.genre }}</p>
         <p><strong>Rating:</strong> ⭐ {{ movie.rating }}</p>
-        <p><strong>Duration:</strong> {{ movie.duration | humanReadableTimePipe}}</p>
+        <p><strong>Duration:</strong> {{ movie.duration | humanReadableTimePipe }}</p>
         <p class="description">{{ movie.description }}</p>
+        <app-favorite-button
+          [isFavorite]="movie.isFavorite"
+          (toggleFavorite)="filmService.toggleFavorite(movie.id)"
+        />
       </div>
     </div>
   } @else {

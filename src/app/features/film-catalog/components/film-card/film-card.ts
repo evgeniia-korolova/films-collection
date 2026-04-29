@@ -2,15 +2,18 @@ import { Component, inject, input, output } from '@angular/core';
 import { Film } from '../../../../core/models/film.interface';
 import { UpperCasePipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { FilmService } from '../../../../data-access/film-service';
+import { FavoriteButton } from "../../../../shared/components/favorite-button/favorite-button";
 
 @Component({
   selector: 'app-film-card',
-  imports: [UpperCasePipe],
+  imports: [UpperCasePipe, FavoriteButton],
   templateUrl: './film-card.html',
   styleUrl: './film-card.scss',
 })
 export class FilmCard {
   private router = inject(Router);
+  protected readonly filmService = inject(FilmService);
   readonly film = input.required<Film>();
   toggleFavorite = output<number>();
 
@@ -20,6 +23,6 @@ export class FilmCard {
 
   onFavoriteToggle(event: Event) {
     event.stopPropagation();
-    this.toggleFavorite.emit(this.film().id);
+    this.filmService.toggleFavorite(this.film().id);
   }
 }

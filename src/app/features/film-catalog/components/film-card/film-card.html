@@ -12,9 +12,10 @@
     <div class="actions">
       <div class="rating">⭐ {{ film().rating }}</div>
 
-      <button (click)="onFavoriteToggle($event)">
-        {{ film().isFavorite ? '❤️ In Favorites' : '🤍 Add to Favorites' }}
-      </button>
+      <app-favorite-button
+        [isFavorite]="film().isFavorite"
+        (toggleFavorite)="filmService.toggleFavorite(film().id)"
+      />
     </div>
   </div>
 </article>
