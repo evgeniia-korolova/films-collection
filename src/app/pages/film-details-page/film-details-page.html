@@ -1,5 +1,5 @@
 @let movie = film();
-<article class="details-card" aria-labelledby="film-title">
+<article class="details-card" aria-labelledby="film-title" appEscapeNavDirective>
   @if (movie) {
     <header class="details-header">
         <a routerLink="/" class="back-link">← Back to Catalog</a>
