@@ -4,7 +4,15 @@
     min-height: 100dvh;   
 }
 
+.header {
+    border-bottom: 1px solid grey;
+}
+
 .main {
     flex-grow: 1;
     padding: 1rem;
+}
+
+.footer {
+    border-top: 1px solid grey;
 }

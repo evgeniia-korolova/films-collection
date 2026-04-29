@@ -10,7 +10,7 @@ export class FilmService {
 
   private filmsResource = resource({
     loader: async () => {
-      const response = await fetch('/data/films.json');
+      const response = await fetch('./data/films.json');
       if (!response.ok) throw new Error('Failed to fetch films');
       return (await response.json()) as Film[] | [];
     },
