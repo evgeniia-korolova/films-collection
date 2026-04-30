@@ -1,12 +1,16 @@
-import { UpperCasePipe } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
+import { FilmService } from '../../../data-access/film-service';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [UpperCasePipe],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
+  protected readonly filmService = inject(FilmService);
   protected readonly title = signal('films-collection');
+
+  favoritesCount = computed(() => this.filmService.favoriteFilms().length);
 }

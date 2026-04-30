@@ -5,8 +5,9 @@
     width: 100wv;  
 }
 
-.header {
-    border-bottom: 1px solid grey;
+.header {    
+    background: var(--header-bg);
+    box-shadow: var(--header-shadow);
 }
 
 .main {
@@ -16,5 +17,6 @@
 }
 
 .footer {
-    border-top: 1px solid grey;
+    background: var(--footer-bg);
+    box-shadow: var(--footer-shadow);
 }

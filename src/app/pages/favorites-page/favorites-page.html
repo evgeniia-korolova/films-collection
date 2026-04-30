@@ -1,0 +1,13 @@
+
+<section class="fav-page" appEscapeNavDirective="/">
+
+    <h1>Favorite Films</h1>
+    
+    <div class="film-grid">
+      @for (film of filmService.favoriteFilms(); track film.id) {
+        <app-film-card [film]="film" />
+      } @empty {
+        <p class="not-found">Your favorites list is empty.</p>
+      }
+    </div>
+</section>

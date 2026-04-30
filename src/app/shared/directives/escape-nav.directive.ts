@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Directive({
   selector: '[appEscapeNavDirective]',
 })
-export class EscapeNavDirective implements OnDestroy{
+export class EscapeNavDirective implements OnDestroy {
   private router = inject(Router);
   private renderer = inject(Renderer2);
 
@@ -24,10 +24,9 @@ export class EscapeNavDirective implements OnDestroy{
     this.router.navigate([this.appEscapeNav()]);
   }
 
-  ngOnDestroy(): void {    
+  ngOnDestroy(): void {
     if (this.unlisten) {
       this.unlisten();
     }
   }
-  
 }
