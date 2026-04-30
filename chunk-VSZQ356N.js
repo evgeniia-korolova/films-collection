@@ -1,1 +1,0 @@
-import{Ja as a,Ka as i,Qa as s,ta as o}from"./chunk-VHPKD7F5.js";var t=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=o({type:n,selectors:[["app-not-found"]],decls:2,vars:0,template:function(e,m){e&1&&(a(0,"h1"),s(1,"404"),i())},encapsulation:2})};export{t as default};
