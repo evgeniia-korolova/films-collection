@@ -1,0 +1,16 @@
+<ul class="breadcrumb-list">
+  @for (crumb of bcService.breadcrumbs(); track crumb.label; let last = $last) {
+    <li class="breadcrumb-item">
+      @if (last) {
+        <span class="breadcrumb-current" aria-current="page">
+          {{ crumb.label }}
+        </span>
+      } @else {
+        <a [routerLink]="crumb.url" class="breadcrumb-link">
+          {{ crumb.label }}
+        </a>
+        <span class="separator" aria-hidden="true">></span>
+      }
+    </li>
+  }
+</ul>

@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FilmService } from '../../data-access/film-service';
 import { FilmCard } from "../../features/film-catalog/components/film-card/film-card";
 import { EscapeNavDirective } from '../../shared/directives/escape-nav.directive';
+import { BreadcrumbService } from '../../core/services/breadcrumb-service';
 
 @Component({
   selector: 'app-favorites-page',
@@ -11,4 +12,9 @@ import { EscapeNavDirective } from '../../shared/directives/escape-nav.directive
 })
 export default class FavoritesPage {
   filmService = inject(FilmService);
+  private bcService = inject(BreadcrumbService);
+
+  constructor() {   
+    this.bcService.setBreadcrumbs([{ label: 'Favorites', url: '/favorites' }]);
+  }
 }
