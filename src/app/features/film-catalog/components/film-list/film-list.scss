@@ -1,5 +1,24 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.search-film {
+    display: block;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .film-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
+}
+
+.not-found {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
 }

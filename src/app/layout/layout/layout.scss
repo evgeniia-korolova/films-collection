@@ -1,7 +1,8 @@
 :host {
     display: flex;
     flex-direction: column;
-    min-height: 100dvh;   
+    min-height: 100dvh; 
+    width: 100wv;  
 }
 
 .header {
@@ -11,6 +12,7 @@
 .main {
     flex-grow: 1;
     padding: 1rem;
+    width: 100%;
 }
 
 .footer {

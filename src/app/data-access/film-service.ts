@@ -8,6 +8,7 @@ import { storage } from '../shared/utils/storage.util';
 export class FilmService {
   private readonly STORAGE_KEY = 'favorite_films';
   private favoriteIds = signal<number[]>(storage.get<number[]>(this.STORAGE_KEY) ?? []);
+  searchQuery = signal('');
 
   private filmsResource = resource({
     loader: async () => {
@@ -28,6 +29,22 @@ export class FilmService {
       isFavorite: favorites.includes(film.id),
     }));
   });
+
+  readonly filteredFilms = computed(() => {
+    const films = this.allFilms();
+    const query = this.searchQuery().toLowerCase().trim();
+
+    if (!query) return films;
+    
+    return films.filter((film) => 
+      film.title.toLowerCase().includes(query) || 
+      film.description?.toLowerCase().includes(query)
+    );
+  });
+
+  updateSearch(val: string) {
+    this.searchQuery.set(val);
+  }
 
   readonly favoriteFilms = computed(() => this.allFilms().filter((f) => f.isFavorite));
 

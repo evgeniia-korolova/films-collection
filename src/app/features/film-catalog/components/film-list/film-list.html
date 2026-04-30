@@ -1,9 +1,10 @@
+<app-film-search class="search-film" [(value)]="searchQuery" />
 <div class="film-grid">
-    @for (movie of filmService.allFilms(); track movie.id) {
+    @for (movie of filmService.filteredFilms(); track movie.id) {
       <app-film-card 
         [film]="movie"         
       />
     } @empty {
-      <p>No films found...</p>
+      <p class="not-found">No films found...</p>
     }
   </div>
