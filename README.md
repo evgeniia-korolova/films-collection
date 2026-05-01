@@ -25,9 +25,9 @@ Deployed with angular-cli-ghpages.
 [Live Demo](https://evgeniia-korolova.github.io/films-collection/)
 
 ## Screenshots
-![Home Page](./screenshots/home.png)
-![Film Details](./screenshots/details.png)
-![About Page](./screenshots/about.png)
+![Home Page](./public/screenshots/home.png)
+![Film Details](./public/screenshots/details.png)
+![About Page](./public/screenshots/about.png)
 
 ## Extras
 - Dynamic theme system with CSS variables
