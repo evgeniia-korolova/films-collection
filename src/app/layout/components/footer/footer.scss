@@ -1,6 +1,4 @@
-.footer-container {
-  // background-color: var(--mat-sys-primary-container);
-  // color: var(--mat-sys-primary);
+.footer-container { 
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: center;
@@ -9,7 +7,7 @@
   padding: 1rem 2rem;
 
   a {
-    color: black;
+    color: var(--color-on-surface);
     text-decoration: none;
     transition:
       filter 0.2s ease,

@@ -1,4 +1,5 @@
-<app-header class="header"/>
+<app-header class="header" [currentTheme]="currentTheme()" (toggleTheme)="toggleTheme()"/>
+<app-breadcrumbs class="breadcrumbs"/>
 <main class="main">
   <router-outlet />
 </main>

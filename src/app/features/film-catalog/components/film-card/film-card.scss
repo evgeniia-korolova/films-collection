@@ -1,16 +1,27 @@
 .card {
-  width: 100%;
-  border: 1px solid grey;
+  width: 100%;  
   border-radius: 1rem;
   height: 100%;
   display: flex;
   flex-direction: column;
+  background: var(--color-surface);
+  // box-shadow: var(--footer-shadow); выносим в переменную, делаем свою тень
+  color: var(--color-on-surface);
+  overflow: hidden;
 
   .poster {
     display: block;
     width: 100%;
+    height: 386px;
     object-fit: cover;
     border-radius: 1rem 1rem 0 0;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    flex-shrink: 0;
+  }
+
+  &:hover .poster {
+    transform: scale(1.05);
   }
 
   .info {
