@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, inject, input } from '@angular/core';
 import { FilmService } from '../../data-access/film-service';
 import { RouterLink } from '@angular/router';
 import { HumanReadableTimePipe } from '../../shared/pipes/human-readable-time-pipe';
@@ -11,6 +11,7 @@ import { BreadcrumbService } from '../../core/services/breadcrumb-service';
   imports: [RouterLink, HumanReadableTimePipe, EscapeNavDirective, FavoriteButton],
   templateUrl: './film-details-page.html',
   styleUrl: './film-details-page.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class FilmDetailsPage {
   protected readonly filmService = inject(FilmService);

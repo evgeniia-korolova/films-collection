@@ -1,4 +1,4 @@
-import { Component, effect, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { FilmService } from '../../../../data-access/film-service';
 import { FilmCard } from "../film-card/film-card";
 import { FilmSearch } from "../../../film-search/film-search";
@@ -9,6 +9,7 @@ import { BreadcrumbService } from '../../../../core/services/breadcrumb-service'
   imports: [FilmCard, FilmSearch],
   templateUrl: './film-list.html',
   styleUrl: './film-list.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class FilmList {
   protected readonly filmService = inject(FilmService);

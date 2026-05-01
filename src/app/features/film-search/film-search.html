@@ -1,5 +1,5 @@
 <div class="search-container">
-  <input [(ngModel)]="value" placeholder="Search film..." class="search-input" />
+  <input [(ngModel)]="value" placeholder="Search film..." class="search-input" appAutoFocusDirective />
   @if (value()) {
     <button class="clear-btn" (click)="value.set('')" type="button">&times;</button>
   }

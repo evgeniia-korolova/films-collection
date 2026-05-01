@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { FilmService } from '../../../data-access/film-service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
@@ -8,6 +8,7 @@ import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
   imports: [RouterLink, RouterLinkActive, Breadcrumbs],
   templateUrl: './header.html',
   styleUrl: './header.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
   protected readonly filmService = inject(FilmService);

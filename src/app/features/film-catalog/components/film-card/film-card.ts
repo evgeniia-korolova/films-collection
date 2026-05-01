@@ -1,4 +1,4 @@
-import { Component, inject, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { Film } from '../../../../core/models/film.interface';
 import { UpperCasePipe } from '@angular/common';
 import { Router } from '@angular/router';
@@ -10,6 +10,7 @@ import { FavoriteButton } from "../../../../shared/components/favorite-button/fa
   imports: [UpperCasePipe, FavoriteButton],
   templateUrl: './film-card.html',
   styleUrl: './film-card.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilmCard {
   private router = inject(Router);
