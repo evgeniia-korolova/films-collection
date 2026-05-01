@@ -1,0 +1,10 @@
+.fav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

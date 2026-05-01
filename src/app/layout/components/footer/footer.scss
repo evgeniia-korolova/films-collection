@@ -1,0 +1,40 @@
+.footer-container { 
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 1rem 2rem;
+
+  a {
+    color: var(--color-on-surface);
+    text-decoration: none;
+    transition:
+      filter 0.2s ease,
+      color 0.2s ease;
+    text-underline-offset: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-self: flex-start;
+
+    &:hover {
+      filter: brightness(1.2);
+      text-decoration: underline;
+    }
+  }
+
+  .footer-logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .year {
+    justify-self: center;
+  }
+
+  .owner {
+    justify-self: flex-end;
+  }
+}
+

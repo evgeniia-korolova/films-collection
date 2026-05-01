@@ -1,0 +1,55 @@
+.search-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  padding: 0.8rem 1rem 0.8rem 2.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.search-container::before {
+  content: '🔍 ';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.clear-btn {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);   
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+  }
+  
+  .clear-btn:hover {
+    color: #333;
+  }

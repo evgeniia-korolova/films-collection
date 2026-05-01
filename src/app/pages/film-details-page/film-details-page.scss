@@ -1,0 +1,39 @@
+.details-header,
+.details-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.details-header {
+  margin-bottom: 1.2rem;
+
+  h1 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+  }
+}
+
+.details-content {
+  img {
+    width: 30%;
+  }
+}
+
+.details-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.back-link {
+  text-decoration: none;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  cursor: pointer;
+  color: var(--color-bg-accent);
+
+  &:hover {    
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}

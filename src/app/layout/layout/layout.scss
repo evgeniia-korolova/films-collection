@@ -1,0 +1,31 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  width: 100wv;
+}
+
+.header {
+  background: var(--color-surface);
+  box-shadow: var(--header-shadow);
+  color: var(--color-on-surface);
+}
+
+.breadcrumbs {
+  background: var(--color-bg);
+  color: var(--color-on-bg);
+}
+
+.main {
+  flex-grow: 1;
+  padding: 1rem;
+  width: 100%;
+  background: var(--color-bg);
+  color: var(--color-on-bg);
+}
+
+.footer {
+  background: var(--color-surface);
+  box-shadow: var(--footer-shadow);
+  color: var(--color-on-surface);
+}
