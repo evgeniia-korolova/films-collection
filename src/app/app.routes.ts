@@ -17,7 +17,11 @@ export const routes: Routes = [
       {
         path: 'favorites',
         loadComponent: () => import('./pages/favorites-page/favorites-page')
-      }
+      },
+      {
+        path: 'about',
+        loadComponent: () => import('./pages/about-page/about-page')
+      },
     ],
   },
   {

@@ -6,14 +6,26 @@
       [routerLinkActiveOptions]="{ exact: true }"
       class="logo"
       aria-label="Back home"
+      title="Home"
       >🏠</a
     >
+
+    <a
+      routerLink="/about"
+      routerLinkActive="active"
+      class="about-link"
+      aria-label="About page"
+      title="About"
+    >
+      ℹ️
+    </a>
 
     <a
       routerLink="/favorites"
       routerLinkActive="active"
       class="favorites-link"
       aria-label="List of favorite films"
+      title="Favorite"
     >
       <span class="icon">{{ filmService.favoriteFilms().length > 0 ? '❤️' : '🤍' }}</span>
 
